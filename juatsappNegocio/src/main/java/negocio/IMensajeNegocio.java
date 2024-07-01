@@ -4,10 +4,15 @@
  */
 package negocio;
 
+import DTOs.Mensaje;
+import java.util.List;
+import org.bson.types.ObjectId;
+
 /**
  *
  * @author eduar
  */
 public interface IMensajeNegocio {
-    
+    public void enviarMensaje(ObjectId chatId, ObjectId usuarioId, String textoMensaje, String imagen);
+    public List<Mensaje> obtenerMensajesChat(ObjectId chatId);
 }
