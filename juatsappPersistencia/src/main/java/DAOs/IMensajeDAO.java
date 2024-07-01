@@ -4,10 +4,18 @@
  */
 package DAOs;
 
+import DTOs.Mensaje;
+import com.mongodb.client.result.DeleteResult;
+import java.util.List;
+import org.bson.types.ObjectId;
+
 /**
  *
  * @author eduar
  */
 public interface IMensajeDAO {
+    public void insertarMensaje(Mensaje mensaje);
+    public DeleteResult eliminarMensaje(ObjectId id);
+    public List<Mensaje> obtenerMensajesPorChatId(ObjectId chatId);
     
 }
