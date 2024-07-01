@@ -8,12 +8,12 @@ package com.mycompany.juatsapppresentacion.GUI;
  *
  * @author Arturo ITSON
  */
-public class frmRegistrarse extends javax.swing.JFrame {
+public class frmModificarDatos extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmRegistrarse
+     * Creates new form frmModificarDatos
      */
-    public frmRegistrarse() {
+    public frmModificarDatos() {
         initComponents();
     }
 
@@ -46,15 +46,14 @@ public class frmRegistrarse extends javax.swing.JFrame {
         btnRegistrarse = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registrar Usuario");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Registrar Usuario");
+        jLabel1.setText("Modificar Datos");
 
         campoTextoTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,9 +94,14 @@ public class frmRegistrarse extends javax.swing.JFrame {
 
         btnImagen.setText("Seleccionar");
 
-        btnRegistrarse.setBackground(new java.awt.Color(10, 133, 246));
+        btnRegistrarse.setBackground(new java.awt.Color(10, 246, 147));
         btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setText("Actualizar");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
 
         btnVolver.setBackground(new java.awt.Color(10, 133, 246));
         btnVolver.setForeground(new java.awt.Color(0, 0, 0));
@@ -153,7 +157,7 @@ public class frmRegistrarse extends javax.swing.JFrame {
                                         .addComponent(btnImagen)))
                                 .addGap(66, 66, 66)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,7 +201,7 @@ public class frmRegistrarse extends javax.swing.JFrame {
                         .addComponent(jblSexo1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnImagen)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,20 +220,20 @@ public class frmRegistrarse extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
-        
-        frmIniciarSesion inicio = new frmIniciarSesion();
-        inicio.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void campoTextoTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTextoTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoTextoTelefonoActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

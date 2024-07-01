@@ -31,11 +31,16 @@ public class frmInicioUsuario extends javax.swing.JFrame {
         jblMensajes = new javax.swing.JLabel();
         jblMensajes1 = new javax.swing.JLabel();
         btnEnviar = new javax.swing.JButton();
+        btnChatear = new javax.swing.JButton();
+        btnDatosContacto = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemModificarDatos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItemAgregarContacto = new javax.swing.JMenuItem();
+        jMenuItemEliminarContacto = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio Usuario");
@@ -55,44 +60,91 @@ public class frmInicioUsuario extends javax.swing.JFrame {
         btnEnviar.setForeground(new java.awt.Color(0, 0, 0));
         btnEnviar.setText("Enviar");
 
+        btnChatear.setBackground(new java.awt.Color(10, 133, 246));
+        btnChatear.setForeground(new java.awt.Color(0, 0, 0));
+        btnChatear.setText("Chatear");
+
+        btnDatosContacto.setBackground(new java.awt.Color(10, 133, 246));
+        btnDatosContacto.setForeground(new java.awt.Color(0, 0, 0));
+        btnDatosContacto.setText("Datos del Contacto");
+        btnDatosContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDatosContactoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jblChats, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jblMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnDatosContacto)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jblMensajes1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEnviar)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jblChats, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnChatear))
+                        .addGap(113, 113, 113)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jblMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jblMensajes1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEnviar)))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(31, 31, 31)
+                .addComponent(btnDatosContacto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jblMensajes, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jblChats, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jblMensajes1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnviar))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jblMensajes1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEnviar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnChatear)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Usuario");
 
         jMenuItemModificarDatos.setText("Modificar Datos");
+        jMenuItemModificarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemModificarDatosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItemModificarDatos);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Agregar Contacto");
+        jMenu2.setText("Administrar Contactos");
+
+        jMenuItemAgregarContacto.setText("Agregar Contacto");
+        jMenuItemAgregarContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarContactoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAgregarContacto);
+
+        jMenuItemEliminarContacto.setText("Eliminar Contacto");
+        jMenuItemEliminarContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEliminarContactoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemEliminarContacto);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Cerrar Sesion");
@@ -101,6 +153,15 @@ public class frmInicioUsuario extends javax.swing.JFrame {
                 jMenu3ActionPerformed(evt);
             }
         });
+
+        jMenuItemSalir.setText("Salir");
+        jMenuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalirActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItemSalir);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -123,53 +184,54 @@ public class frmInicioUsuario extends javax.swing.JFrame {
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:
         
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
+        // TODO add your handling code here:
         frmIniciarSesion inicio = new frmIniciarSesion();
         inicio.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenu3ActionPerformed
+    }//GEN-LAST:event_jMenuItemSalirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmInicioUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmInicioUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmInicioUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmInicioUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jMenuItemModificarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModificarDatosActionPerformed
+        // TODO add your handling code here:
+        frmModificarDatos modificar = new frmModificarDatos();
+        modificar.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jMenuItemModificarDatosActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmInicioUsuario().setVisible(true);
-            }
-        });
-    }
+    private void jMenuItemAgregarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarContactoActionPerformed
+        // TODO add your handling code here:
+        DlgAgregarContacto agregar = new DlgAgregarContacto();
+        agregar.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarContactoActionPerformed
+
+    private void jMenuItemEliminarContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEliminarContactoActionPerformed
+        // TODO add your handling code here:
+        DlgEliminarContacto eliminar = new DlgEliminarContacto();
+        eliminar.setVisible(true);
+    }//GEN-LAST:event_jMenuItemEliminarContactoActionPerformed
+
+    private void btnDatosContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatosContactoActionPerformed
+        // TODO add your handling code here:
+        DlgDatosContacto datos = new DlgDatosContacto();
+        datos.setVisible(true);
+    }//GEN-LAST:event_btnDatosContactoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChatear;
+    private javax.swing.JButton btnDatosContacto;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemAgregarContacto;
+    private javax.swing.JMenuItem jMenuItemEliminarContacto;
     private javax.swing.JMenuItem jMenuItemModificarDatos;
+    private javax.swing.JMenuItem jMenuItemSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jblChats;
     private javax.swing.JLabel jblMensajes;
