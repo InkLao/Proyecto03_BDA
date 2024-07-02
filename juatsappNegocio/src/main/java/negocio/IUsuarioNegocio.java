@@ -4,10 +4,13 @@
  */
 package negocio;
 
+import DTOs.UsuarioDTO;
+
 /**
  *
  * @author eduar
  */
 public interface IUsuarioNegocio {
     
+    public void insertarUsuario(UsuarioDTO usuario);
 }

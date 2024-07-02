@@ -4,7 +4,7 @@
  */
 package DAOs;
 
-import DTOs.Usuario;
+import DTOs.UsuarioDTO;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.types.ObjectId;
@@ -14,9 +14,9 @@ import org.bson.types.ObjectId;
  * @author eduar
  */
 public interface IUsuarioDAO {
-    public void insertarUsuario(Usuario usuario);
-    public Usuario encuentraUsuarioPorTelefono(String telefono);
-    public UpdateResult actualizarUsuario(Usuario usuario);
+    public void insertarUsuario(UsuarioDTO usuario);
+    public UsuarioDTO encuentraUsuarioPorTelefono(String telefono);
+    public UpdateResult actualizarUsuario(UsuarioDTO usuario);
     public DeleteResult eliminaUsuario(String telefono);
-    public Usuario encuentraUsuarioPorId(ObjectId id);
+    public UsuarioDTO encuentraUsuarioPorId(ObjectId id);
 }

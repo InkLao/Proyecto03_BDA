@@ -4,10 +4,21 @@
  */
 package negocio;
 
+import DAOs.IUsuarioDAO;
+import DAOs.UsuarioDAO;
+import DTOs.UsuarioDTO;
+
 /**
  *
  * @author eduar
  */
 public class UsuarioNegocio implements IUsuarioNegocio{
     
+    IUsuarioDAO usuarioDao = new UsuarioDAO();
+    
+    
+    public void insertarUsuario(UsuarioDTO usuario){
+    
+        usuarioDao.insertarUsuario(usuario);
+    }
 }

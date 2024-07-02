@@ -4,7 +4,7 @@
  */
 package DAOs;
 
-import DTOs.Usuario;
+import DTOs.UsuarioDTO;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
@@ -28,7 +28,7 @@ public class UsuarioDAO implements IUsuarioDAO{
     }
     
     @Override
-    public void insertarUsuario(Usuario usuario) {
+    public void insertarUsuario(UsuarioDTO usuario) {
         Document doc = new Document("telefono", usuario.getTelefono())
                 .append("nombre", usuario.getNombre())
                 .append("contrasena_encriptada", usuario.getContrasenaEncriptada())
@@ -40,9 +40,9 @@ public class UsuarioDAO implements IUsuarioDAO{
     }
 
     @Override
-    public Usuario encuentraUsuarioPorTelefono(String telefono) {
+    public UsuarioDTO encuentraUsuarioPorTelefono(String telefono) {
         Document doc = collection.find(eq("telefono", telefono)).first();
-        return doc != null ? new Usuario(
+        return doc != null ? new UsuarioDTO(
                 doc.getObjectId("_id"),
                 doc.getString("telefono"),
                 doc.getString("nombre"),
@@ -55,7 +55,7 @@ public class UsuarioDAO implements IUsuarioDAO{
     }
 
     @Override
-    public UpdateResult actualizarUsuario(Usuario usuario) {
+    public UpdateResult actualizarUsuario(UsuarioDTO usuario) {
         return collection.updateOne(eq("telefono", usuario.getTelefono()),
                 new Document("$set", new Document("nombre", usuario.getNombre())
                         .append("contrasena_encriptada", usuario.getContrasenaEncriptada())
@@ -71,9 +71,9 @@ public class UsuarioDAO implements IUsuarioDAO{
     }
 
     @Override
-    public Usuario encuentraUsuarioPorId(ObjectId id) {
+    public UsuarioDTO encuentraUsuarioPorId(ObjectId id) {
         Document doc = collection.find(eq("_id", id)).first();
-        return doc != null ? new Usuario(
+        return doc != null ? new UsuarioDTO(
                 doc.getObjectId("_id"),
                 doc.getString("telefono"),
                 doc.getString("nombre"),

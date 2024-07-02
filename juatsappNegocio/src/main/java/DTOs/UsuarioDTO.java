@@ -12,7 +12,7 @@ import org.bson.types.ObjectId;
  *
  * @author eduar
  */
-public class Usuario {
+public class UsuarioDTO {
     private ObjectId id;
     private String telefono;
     private String contrasenaEncriptada;
@@ -22,7 +22,7 @@ public class Usuario {
     private String sexo;
     private String nombre;
 
-    public Usuario(String telefono, String nombre, String contrasenaEncriptada, Date fechaNacimiento, Binary imagenPerfil, String direccion, String sexo) {
+    public UsuarioDTO(String telefono, String nombre, String contrasenaEncriptada, Date fechaNacimiento, Binary imagenPerfil, String direccion, String sexo) {
         this.telefono = telefono;
         this.contrasenaEncriptada = contrasenaEncriptada;
         this.fechaNacimiento = fechaNacimiento;
@@ -32,7 +32,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public Usuario(ObjectId id, String telefono, String nombre, String contrasenaEncriptada, Date fechaNacimiento, Binary imagenPerfil, String direccion, String sexo) {
+    public UsuarioDTO(ObjectId id, String telefono, String nombre, String contrasenaEncriptada, Date fechaNacimiento, Binary imagenPerfil, String direccion, String sexo) {
         this.id = id;
         this.telefono = telefono;
         this.contrasenaEncriptada = contrasenaEncriptada;
@@ -45,7 +45,7 @@ public class Usuario {
     
     
 
-    public Usuario() {
+    public UsuarioDTO() {
 
     }
 
